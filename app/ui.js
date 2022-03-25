@@ -11,10 +11,11 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
-  $('#slug-success-display').html('<p>User signed in successfully</p>')
-  $('#slug-error-display').hide()
-  // reset all forms
   $('form').trigger('reset')
+  $('#slug-sign-up-form, #slug-sign-in-form, #slug-error-display').hide()
+  $('#slug-success-display').html('<p>User signed in successfully</p>')
+  $('#tic-tac-toe-game, #new-game, #slug-sign-out').show()
+  // reset all forms
 
   console.log(response)
   // store data from the response in my store object
@@ -28,13 +29,26 @@ const onSignInFailure = function () {
   $('#slug-error-display').html('<p>Error while signing in</p>')
 }
 
+const onSignOutSuccess = function () {
+  $('#slug-success-display').html('<p>User signed out successfully</p>')
+
+  $('form').trigger('reset')
+  $('#slug-sign-up-form, #slug-sign-in-form').show()
+  $('#new-game, #tic-tac-toe-game').hide()
+}
+
+const onSignOutFailure = function () {
+  $('#slug-error-display').html('<p>Error while signing out</p>')
+}
+
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
-  onSignInFailure
+  onSignInFailure,
   // onChangePasswordSuccess,
   // onChangePasswordFailure,
-  // onSignOutSuccess,
-  // onSignOutFailure,
+  onSignOutSuccess,
+  onSignOutFailure
 }
