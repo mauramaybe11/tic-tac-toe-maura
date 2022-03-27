@@ -4,8 +4,8 @@
 
 $font-family-part-two: 'Palette Mosaic', serif;
 $font-family: 'Playfair Display', serif;
-$body-bg-color: grey;
-$box-bg-color: lightgrey;
+$body-bg-color: pink;
+$box-bg-color: blue;
 $box-border-color: orange;
 $alt-bg-color: cyan;
 
@@ -14,8 +14,13 @@ body {
 }
 
 .game-title {
-color: black;
+color: blue;
 }
+
+// .slug-sign-up-form {
+//   text-align: center;
+//   font-family: 'Palette Mosaic', serif;
+// }
 
 .box {
   align-items: center;
@@ -28,7 +33,12 @@ color: black;
   justify-content: center;
 }
 
-h1, h2 {
+h1 {
+  font-family: 'Palette Mosaic', serif;
+  text-align: center;
+  color: blue;
+}
+h2 {
   font-family: 'Palette Mosaic', serif;
 }
 

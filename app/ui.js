@@ -41,7 +41,13 @@ const onSignOutFailure = function () {
   $('#slug-error-display').html('<p>Error while signing out</p>')
 }
 
+const onStartGame = function (response) {
+  store.game = response.game
+}
 
+// const onNewGameSuccess = function () {
+//   $('.cells').trigger('reset')
+// }
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -50,5 +56,6 @@ module.exports = {
   // onChangePasswordSuccess,
   // onChangePasswordFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onStartGame
 }

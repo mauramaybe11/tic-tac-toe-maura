@@ -41,11 +41,25 @@ const createNewGame = function (data) {
   })
 }
 
+const updateGameMove = function (data) {
+  console.log(data)
+
+  return $.ajax({
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  createNewGame
+  createNewGame,
+  updateGameMove
   // changePassword,
   // signOut,
 }
