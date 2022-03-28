@@ -1,8 +1,7 @@
 const store = require('./store.js')
 
 const onSignUpSuccess = function () {
-  $('#slug-success-display').html('<p>Your slug successfully signed up, its on the way to finding love</p>')
-
+  $('#slug-success-display').html('<p>Your slug successfully signed up, its on the way to finding love<p>').show()
   $('form').trigger('reset')
 }
 
@@ -14,7 +13,7 @@ const onSignInSuccess = function (response) {
   $('form').trigger('reset')
   $('#slug-sign-up-form, #slug-sign-in-form, #slug-error-display').hide()
   $('#slug-success-display').html('<p>User signed in successfully</p>')
-  $('#tic-tac-toe-game, #new-game, #slug-sign-out').show()
+  $('#new-game, #slug-sign-out').show()
   // reset all forms
 
   console.log(response)
@@ -40,14 +39,30 @@ const onSignOutSuccess = function () {
 const onSignOutFailure = function () {
   $('#slug-error-display').html('<p>Error while signing out</p>')
 }
-
-const onStartGame = function (response) {
-  store.game = response.game
+const clearBoard = function () {
+  // set value = to null
+  ($('.box')).text('Click Me')
 }
 
-// const onNewGameSuccess = function () {
-//   $('.cells').trigger('reset')
-// }
+const onStartGameSuccess = function (response) {
+  store.game = response.game
+  $('#tic-tac-toe-game').show()
+  clearBoard()
+}
+
+const onStartGameFailure = function () {
+  $('#slug-error-display').html('<p>Error while starting new game!</p>')
+}
+
+const onUpdateGameSuccess = function (response) {
+  console.log(response)
+  store.game = response.game
+}
+const onUpdateGameFailure = function (response) {
+  console.log(response)
+  $('#slug-error-display').html('<p>Error while updating the game!</p>')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -57,5 +72,8 @@ module.exports = {
   // onChangePasswordFailure,
   onSignOutSuccess,
   onSignOutFailure,
-  onStartGame
+  onStartGameSuccess,
+  onStartGameFailure,
+  onUpdateGameSuccess,
+  onUpdateGameFailure
 }

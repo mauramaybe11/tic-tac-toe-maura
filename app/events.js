@@ -33,8 +33,7 @@ const onSignIn = function (event) {
 }
 const onCreateNewGame = function () {
   slugApi.createNewGame()
-    .then((response) => { store.game = response.game.cells })
-    .then(() => console.log(store))
+    .then((response) => slugUi.onStartGameSuccess(response))
 }
 
 const onSignOut = function () {
@@ -57,8 +56,13 @@ const onSignOut = function () {
 // }
 // let value=
 // let gameOver=
-
-const board = [null, null, null, null, null, null, null, null, null]
+let gameOver = false
+// eslint-disable-next-line prefer-const
+let board = [null, null, null, null, null, null, null, null, null]
+// const clearBoard = function () {
+//   for (let i = 0; i < board.length; i++) { board[i] = null }
+//   return board
+// }
 let userX = true
 const onBoxClick = function () {
   const cellIndex = this.getAttribute('data-cell-index')
@@ -68,6 +72,7 @@ const onBoxClick = function () {
   console.log(cellIndex)
   if (userX) {
     $(this).text('x')
+    // $(this).append($('<img>', { class: 'slug-daddy', src: 'https://i.imgur.com/NCgKlnx.jpeg' }))
     board[cellIndex] = 'x'
   } else {
     $(this).text('o')
@@ -79,44 +84,57 @@ const onBoxClick = function () {
   // row check
   if (board[0] === board[1] && board[1] === board[2] && board[1] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return
+    gameOver = !gameOver
+    console.log(gameOver)
   }
   if (board[3] === board[4] && board[4] === board[5] && board[4] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return
+    gameOver = !gameOver
+    console.log(gameOver)
   }
   if (board[6] === board[7] && board[7] === board[8] && board[6] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return
+    gameOver = !gameOver
+    console.log(gameOver)
   }
   if (board[6] === board[7] && board[7] === board[8] && board[6] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return
+    gameOver = !gameOver
+    console.log(gameOver)
   }
   if (board[0] === board[3] && board[3] === board[6] && board[6] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return
+    gameOver = !gameOver
+    console.log(gameOver)
   }
   if (board[1] === board[4] && board[4] === board[7] && board[1] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return
+    gameOver = !gameOver
+    console.log(gameOver)
   }
   if (board[2] === board[5] && board[5] === board[8] && board[2] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return
+    gameOver = !gameOver
+    console.log(gameOver)
   }
   // diagonals
   if (board[0] === board[4] && board[4] === board[8] && board[0] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return
+    gameOver = !gameOver
+    console.log(gameOver)
   }
   if (board[2] === board[4] && board[4] === board[6] && board[6] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return
+    gameOver = !gameOver
+    console.log(gameOver)
   }
   if (board[1] !== null && board[2] !== null && board[3] !== null && board[4] !== null && board[5] !== null & board[6] !== null && board[7] !== null && board[8] !== null) {
     $('#Winner').text("It's a tie!")
+    gameOver = !gameOver
+    console.log(gameOver)
   }
+  console.log(cellIndex, board[cellIndex], gameOver)
+  slugApi.updateGame(cellIndex, board[cellIndex], gameOver)
 }
 
 // let game = {
@@ -127,36 +145,18 @@ const onBoxClick = function () {
 //     over: true
 // }
 
-/// Trying to think of ways to update books, should we still be using get form fields when we can get the data from a click?
-
-// const onUpdateGameMove = function (event) {
-// 	event.preventDefault()
-// 	// event.target will tell us more information about the thing that was clicked
-
-// 	const playerClick = event.target.onBoxClick
-
-// 	// we need to find the id of the book
-//   const playerId = $(playerClick).data('id')
-
-// 	// use getFormFields to get the data from the form
-
-// 	console.log(data)
-
-// 	console.log(playerId)
-// 	// data.book.id = bookId
-
-// 	slugApi
-// 		.updateGameMove(data, bookId)
-// 		.then(() => slugUi.onUpdateGameMoveSuccess())
-// 		.catch(() => slugUi.onUpdateGameMoveFailure())
-
+// const onUpdateGame = function () {
+//   slugApi.updateGame()
+//     .then((response) => slugUi.onUpdateGameSuccess(response))
+//     .catch(() => slugUi.onUpdateGameFailure())
+// }
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onCreateNewGame,
   onBoxClick
-  // onIndexGames,
+  // onUpdateGame
   // onShowGames
 
 }

@@ -41,8 +41,8 @@ const createNewGame = function (data) {
   })
 }
 
-const updateGameMove = function (data) {
-  console.log(data)
+const updateGame = function (cellIndex, userX, gameOver) {
+  // console.log(data)
 
   return $.ajax({
     method: 'PATCH',
@@ -50,7 +50,15 @@ const updateGameMove = function (data) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data: data
+    data: {
+      game: {
+        cell: {
+          index: cellIndex,
+          value: userX
+        },
+        over: gameOver
+      }
+    }
   })
 }
 
@@ -59,7 +67,7 @@ module.exports = {
   signIn,
   signOut,
   createNewGame,
-  updateGameMove
+  updateGame
   // changePassword,
   // signOut,
 }
