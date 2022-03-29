@@ -1,7 +1,7 @@
 const store = require('./store.js')
 
 const onSignUpSuccess = function () {
-  $('#slug-success-display').html('<p>Your slug successfully signed up, its on the way to finding love<p>').show()
+  $('#slug-success-display').html('<p>Your slug successfully signed up, its on the way to finding love</p>')
   $('form').trigger('reset')
 }
 
@@ -41,11 +41,13 @@ const onSignOutFailure = function () {
 }
 const clearBoard = function () {
   // set value = to null
-  ($('.box')).text('Click Me')
+  $('.box').text('Click Me')
+  $('#Winner').text('Who Will Win?')
 }
 
 const onStartGameSuccess = function (response) {
   store.game = response.game
+  console.log(response)
   $('#tic-tac-toe-game').show()
   clearBoard()
 }

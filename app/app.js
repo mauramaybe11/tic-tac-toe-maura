@@ -11,5 +11,4 @@ $(() => {
   $('#slug-sign-out, #tic-tac-toe-game').hide()
   $('#new-game').hide()
   $('#new-game').on('click', slugEvents.onCreateNewGame)
-  $('.box').on('click', slugEvents.onBoxClick)
 })

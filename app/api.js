@@ -30,7 +30,6 @@ const signOut = function () {
 }
 
 const createNewGame = function (data) {
-  console.log(data)
   return $.ajax({
     method: 'POST',
     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
