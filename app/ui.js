@@ -33,7 +33,7 @@ const onSignOutSuccess = function () {
 
   $('form').trigger('reset')
   $('#slug-sign-up-form, #slug-sign-in-form').show()
-  $('#new-game, #tic-tac-toe-game, #Winner').hide()
+  $('#new-game, #tic-tac-toe-game, #Winner, #sign-out-button, #user-turn').hide()
 }
 
 const onSignOutFailure = function () {
