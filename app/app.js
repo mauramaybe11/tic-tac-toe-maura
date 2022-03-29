@@ -9,6 +9,6 @@ $(() => {
   $('#sign-in-form').on('submit', slugEvents.onSignIn)
   $('#sign-out-button').on('click', slugEvents.onSignOut)
   $('#slug-sign-out, #tic-tac-toe-game').hide()
-  $('#new-game').hide()
+  $('#new-game, #user-turn').hide()
   $('#new-game').on('click', slugEvents.onCreateNewGame)
 })

@@ -53,13 +53,8 @@ const onSignOut = function () {
 // let value=
 // let gameOver=
 let gameOver = false
-// eslint-disable-next-line prefer-const
-// let store.game.cells = [null, null, null, null, null, null, null, null, null]
-// const clearBoard = function () {
-//   for (let i = 0; i < board.length; i++) { board[i] = null }
-//   return board
-// }
 let userX = true
+
 const onBoxClick = function () {
   const cellIndex = this.getAttribute('data-cell-index')
   if (store.game.cells[cellIndex]) {
@@ -68,11 +63,14 @@ const onBoxClick = function () {
   console.log(cellIndex)
   if (userX) {
     // $(this).text('x')
-    $(this).html($('<img>', { class: 'slug-daddy', src: 'https://i.imgur.com/NCgKlnx.jpeg' }))
-    store.game.cells[cellIndex] = 'x'
+    $(this).html($('<img>', { class: 'slug-daddy', src: 'https://i.imgur.com/4D7x783.png' }))
+    store.game.cells[cellIndex] = 'Green Slug'
+    $('#user-turn').html('<p>Time for Pink Slug to Find Love</p>')
   } else {
-    $(this).text('o')
-    store.game.cells[cellIndex] = 'o'
+    $(this).html($('<img>', { class: 'slug-daddy', src: 'https://i.imgur.com/68IXzHA.png' }))
+    // $(this).text('o')
+    store.game.cells[cellIndex] = 'Pink Slug'
+    $('#user-turn').html('<p>Time for Green Slug to Find Love</p>')
   }
   console.log(store.game.cells)
   // check winner for row
@@ -132,7 +130,7 @@ const onBoxClick = function () {
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
-  } else if (store.game.cells[1] !== '' && store.game.cells[2] !== '' && store.game.cells[3] !== '' && store.game.cells[4] !== '' && store.game.cells[5] !== '' & store.game.cells[6] !== ' ' && store.game.cells[7] !== ' ' && store.game.cells[8] !== '') {
+  } else if (store.game.cells[0] !== '' && store.game.cells[1] !== '' && store.game.cells[2] !== '' && store.game.cells[3] !== '' && store.game.cells[4] !== '' && store.game.cells[5] !== '' & store.game.cells[6] !== '' && store.game.cells[7] !== '' && store.game.cells[8] !== '') {
     $('#Winner').text("It's a tie!")
     gameOver = !gameOver
     console.log(gameOver)
@@ -142,10 +140,13 @@ const onBoxClick = function () {
   slugApi.updateGame(cellIndex, store.game.cells[cellIndex], gameOver)
 }
 const onCreateNewGame = function () {
+  gameOver = false
+  userX = true
   slugApi
     .createNewGame()
     .then((response) => slugUi.onStartGameSuccess(response))
   $('.box').on('click', onBoxClick)
+  $('#user-turn').html('<p>Green Slug Goes First!</p>')
 }
 // let game = {
 //     cell = {

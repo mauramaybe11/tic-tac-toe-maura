@@ -14,27 +14,26 @@
   <body>
     
     <h1>Slug Love</h1>
+    <h2>It takes 3 slugs to fall in love!</h2>
           
         </div>
       </div>
     </div>
       <p id="message"></p>
-    <div id="slug-sign-up-form">
-      <form id="sign-up" class="border">
-        <fieldset>
-          <legend>New Slug Trying to Find Love? Sing UP!</legend>
+    <div class="form" id="slug-sign-up-form">
+      <form id="sign-up">
+          <p class="sign-up-form">New Slug Trying to Find Love? Sign UP!</p>
           <input type="text" name="credentials[email]" placeholder="Email">
           <input type="password" name="credentials[password]" placeholder="Password">
           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
           <input type="submit" value="Sign up!">
-        </fieldset>
       </form>
       <section id="slug-sign-up-success-display"></section>
       <section id="slug-sign-up-error-display"></section>
     </div>
       
-    <div id="slug-sign-in-form">
-      <h3>Sign In</h3>
+    <div class="form" id="slug-sign-in-form">
+      <p>Sign In</p>
       <form id="sign-in-form">
         <input name="credentials[email]" type="email" placeholder="Email">
         <input name="credentials[password]" type="password" placeholder="Enter password">
@@ -53,7 +52,7 @@
   
     <button id="new-game">New Game</button>
     
-    <!-- <img src="https://i.imgur.com/NCgKlnx.jpeg"> -->
+    <p id="user-turn">Green Slug Goes First!</p>
 
     <section id="tic-tac-toe-game">
       <div class="container">

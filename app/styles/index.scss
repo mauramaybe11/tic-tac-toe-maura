@@ -1,6 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Palette+Mosaic&display=swap');
+
 
 $font-family-part-two: 'Palette Mosaic', serif;
 $font-family: 'Playfair Display', serif;
@@ -11,17 +13,15 @@ $alt-bg-color: cyan;
 
 body {
   background-color: $body-bg-color;
+  background-image: url(app/slug-images/slug-background.png);
+  height:0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:auto;
 }
-
 .game-title {
 color: blue;
 }
-
-// .slug-sign-up-form {
-//   text-align: center;
-//   font-family: 'Palette Mosaic', serif;
-// }
-
 .box {
   align-items: center;
   background-color: $box-bg-color;
@@ -30,20 +30,30 @@ color: blue;
   display: flex;
   font-family: $font-family-part-two;
   height: 80px;
+  overflow: hidden;
   justify-content: center;
 }
-.slug-daddy {
-  width: 50px;
+div.box > img.slug-daddy {
+  max-width: 100%;
+  max-height: 100%;
 }
 h1 {
-  font-family: 'Palette Mosaic', serif;
+  font-family: 'Creepster', cursive;
   text-align: center;
-  color: blue;
+  color: rgb(4, 3, 61);
 }
 h2 {
-  font-family: 'Palette Mosaic', serif;
+  font-family: 'Creepster', cursive;
+  text-align: center;
+   color: rgb(4, 3, 61);
 }
-
+p {
+  color: rgb(4, 3, 61); 
+  text-align:left;
+}
+.form {
+  text-align:left;
+}
 .alt-color {
   background-color: $alt-bg-color;
 }

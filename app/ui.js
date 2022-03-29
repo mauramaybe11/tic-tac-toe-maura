@@ -13,7 +13,7 @@ const onSignInSuccess = function (response) {
   $('form').trigger('reset')
   $('#slug-sign-up-form, #slug-sign-in-form, #slug-error-display').hide()
   $('#slug-success-display').html('<p>User signed in successfully</p>')
-  $('#new-game, #slug-sign-out').show()
+  $('#new-game, #slug-sign-out, #Winner, #user-turn').show()
   // reset all forms
 
   console.log(response)
@@ -33,7 +33,7 @@ const onSignOutSuccess = function () {
 
   $('form').trigger('reset')
   $('#slug-sign-up-form, #slug-sign-in-form').show()
-  $('#new-game, #tic-tac-toe-game').hide()
+  $('#new-game, #tic-tac-toe-game, #Winner').hide()
 }
 
 const onSignOutFailure = function () {

@@ -3,4 +3,9 @@ Tic Tac Toe (It takes three slugs to fall in love)
 To win this game you must get the slugs to fall in love. It takes 3 slugs in a row to get them to fall in love. They can be in a row of three vertically, horizontally, or diagonally in order for the user to win. 
 
 
-As a user I will be able to sign up for an account. I will be able to select which color of slug I would like to be. I will be able to click a box on the tic tac toe grid to select where I am placing my slug. I will be able to take turns selecting where my slug goes against my opponent. I will be able to win or have the app tell me when myself or my opponent have won or be alerted of a tie. I will be able to start a new game. I will be able to sign out. 
+User will be able to sign up for an account. 
+User will be able to select which color of slug they would like to use as their game piece.
+The User with the green slug will be the first to populate on the board. 
+Users will be able to click a box on the tic tac toe grid to select where they would like to place their slug game piece. 
+Once a user has three slugs in a row either horizontally, vertically or diagonally the users will be notified who the winner of the game is.  
+Users will be notified if the game results in tie if all squares have been played and there are no 3 slugs in a row. 
