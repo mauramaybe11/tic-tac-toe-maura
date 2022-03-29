@@ -1,12 +1,12 @@
 const store = require('./store.js')
 
 const onSignUpSuccess = function () {
-  $('#slug-success-display').html('<p>Your slug successfully signed up, its on the way to finding love</p>')
+  $('#slug-sign-up-success-display').html('<p>Your slug successfully signed up, its on the way to finding love</p>')
   $('form').trigger('reset')
 }
 
 const onSignUpFailure = function () {
-  $('#slug-error-display').html('<p>Your Slug can not find love because it did not successfully sign up</p>')
+  $('#slug-sign-up-error-display').html('<p>Your Slug can not find love because it did not successfully sign up</p>')
 }
 
 const onSignInSuccess = function (response) {
