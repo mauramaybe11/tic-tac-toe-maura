@@ -15,9 +15,9 @@ const onSignUpFailure = function () {
 
 const onSignInSuccess = function (response) {
   $('form').trigger('reset')
-  $('#slug-sign-up-form, #slug-sign-in-form, #slug-error-display').hide()
+  $('#slug-sign-up-form, #slug-sign-in-form, #slug-error-display, #how-to-play, #new-slug').hide()
   $('#slug-success-display').html('<p>Your Slug is a GO!</p>')
-  $('#new-game, #sign-out-button, #Winner, #user-turn, #slug-sign-in-success-display, #slug-success-display, #slug-sign-up-success-display, #slug-sign-out').show()
+  $('#new-game, #sign-out-button, #Winner, #user-turn, #slug-sign-in-success-display, #slug-sign-up-success-display, #slug-sign-out').show()
   console.log(response)
   store.user = response.user
 }
@@ -32,8 +32,8 @@ const onSignOutSuccess = function () {
   $('#Winner').html('<p>Who Will Win?</p>')
   $('#user-turn').html('<p>Green Slug Goes First!</p>')
   $('form').trigger('reset')
-  $('#slug-sign-up-form, #slug-sign-in-form, #slug-sign-up-error-display, #slug-sign-up-success-display').show()
-  $('#new-game, #tic-tac-toe-game, #Winner, #sign-out-button, #sign-out-text, #user-turn, #slug-sign-up-error-display, #slug-sign-up-success-display, #slug-sign-in-error-display').hide()
+  $('#slug-sign-up-form, #slug-sign-in-form, #slug-sign-up-error-display, #slug-sign-up-success-display, #new-slug, #how-to-play').show()
+  $('#new-game, #tic-tac-toe-game, #Winner, #sign-out-button, #sign-out-text, #user-turn, #slug-sign-up-error-display, #slug-sign-up-success-display, #slug-sign-in-error-display, #sign-up').hide()
 }
 
 const onSignOutFailure = function () {

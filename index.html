@@ -13,12 +13,13 @@
   </head>
   <body>
     <h1>Slug Love</h1>
-    <h2 id="three-slugs">It takes 3 slugs to fall in love!</h2>
-    <div>
-      <p id="message"></p>
+
+    <button id="how-to-play">How to Play!</button>
+    <button id="hide-how-to-play">Hide Me!</button>
+    
     <div class="form" id="slug-sign-up-form">
       <form id="sign-up">
-          <p class="sign-up-form">New Slug Trying to Find Love? Sign UP!</p>
+        <p>This is a fake game. Do not use your real email or passwords.</p>
           <input type="text" name="credentials[email]" placeholder="Email">
           <input type="password" name="credentials[password]" placeholder="Password">
           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
@@ -27,10 +28,15 @@
       <section id="slug-sign-up-success-display"></section>
       <section id="slug-sign-up-error-display"></section>
     </div>
-    </div>
+    
+    <button id="new-slug">New Slug Trying to find Love?</button>
+    <button id="hide-new-slug">Hide Me!</button>
+    
+    
+
 
     <div class="form" id="slug-sign-in-form">
-      <p>Already a Slug? Sign In!</p>
+      <p></p>
       <form id="sign-in-form">
         <input name="credentials[email]" type="email" placeholder="Email">
         <input name="credentials[password]" type="password" placeholder="Enter password">
@@ -41,16 +47,14 @@
     </div>
 
     <div id="slug-sign-out">
-      <p id="sign-out-text">Sign Out</p>
+      <p id="sign-out-text"></p>
       <button id="sign-out-button">Sign Out</button>
 
       <section id="slug-success-display"></section>
       <section id="slug-error-display"></section>
     </div>
-
-    
     <button id="new-game">New Game</button>
-    <h2 id="user-turn">Green Slug Goes First!</h2>
+    <h2 class="game-play" id="user-turn">Green Slug Goes First!</h2>
     <h2 id="Winner"></h2>
 
     <section id="tic-tac-toe-game">

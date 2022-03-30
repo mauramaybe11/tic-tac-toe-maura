@@ -60,6 +60,7 @@ button {
   text-align:left;
   font-family: 'Creepster', cursive;
   font-size: 30px;
+  border-radius: 12px;
   background-color:rgb(192, 150, 182)
 }
 .form {
@@ -73,7 +74,12 @@ button {
   text-align:left;
   font-family: 'Creepster', cursive;
   font-size: 30px;
-  background-color:rgb(192, 150, 182)
+  background-color:rgb(192, 150, 182);
+  border-radius: 12px;
+}
+.game-play{
+  text-align: center;
+  color: green;
 }
 .alt-color {
   background-color: $alt-bg-color;
