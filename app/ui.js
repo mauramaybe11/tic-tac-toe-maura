@@ -3,6 +3,7 @@ const store = require('./store.js')
 const onSignUpSuccess = function () {
   $('#slug-sign-up-success-display').html('<p>Your slug successfully signed up, its on the way to finding love</p>')
   $('form').trigger('reset')
+  $('#slug-sign-up-error-display').hide()
 }
 
 const onSignUpFailure = function () {
@@ -13,15 +14,9 @@ const onSignInSuccess = function (response) {
   $('form').trigger('reset')
   $('#slug-sign-up-form, #slug-sign-in-form, #slug-error-display').hide()
   $('#slug-success-display').html('<p>Your Slug is a GO!</p>')
-  $('#new-game, #slug-sign-out, #Winner, #user-turn').show()
-  // reset all forms
-
+  $('#new-game, #sign-out-button, #Winner, #user-turn, #slug-success-display, #slug-sign-out').show()
   console.log(response)
-  // store data from the response in my store object
   store.user = response.user
-
-  // reset single form
-  // $('#sign-in-form').trigger('reset')
 }
 
 const onSignInFailure = function () {

@@ -12,13 +12,9 @@
     <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
   <body>
-    
     <h1>Slug Love</h1>
-    <h2>It takes 3 slugs to fall in love!</h2>
-          
-        </div>
-      </div>
-    </div>
+    <h2 id="three-slugs">It takes 3 slugs to fall in love!</h2>
+    <div>
       <p id="message"></p>
     <div class="form" id="slug-sign-up-form">
       <form id="sign-up">
@@ -31,9 +27,10 @@
       <section id="slug-sign-up-success-display"></section>
       <section id="slug-sign-up-error-display"></section>
     </div>
-      
+    </div>
+
     <div class="form" id="slug-sign-in-form">
-      <p>Sign In</p>
+      <p>Already a Slug? Sign In!</p>
       <form id="sign-in-form">
         <input name="credentials[email]" type="email" placeholder="Email">
         <input name="credentials[password]" type="password" placeholder="Enter password">
@@ -42,17 +39,17 @@
     </div>
 
     <div id="slug-sign-out">
-      <h3 id="sign-out-text">Sign Out</h3>
+      <p id="sign-out-text">Sign Out</p>
       <button id="sign-out-button">Sign Out</button>
 
       <section id="slug-success-display"></section>
       <section id="slug-error-display"></section>
     </div>
+
     
-    <p id="user-turn">Green Slug Goes First!</p>
     <button id="new-game">New Game</button>
-    
-    
+    <h2 id="user-turn">Green Slug Goes First!</h2>
+    <h2 id="Winner"></h2>
 
     <section id="tic-tac-toe-game">
       <div class="container">
@@ -70,9 +67,5 @@
       </div>
       
     </section>
-
-    <h1 id="Winner"></h1>
-
-
   </body>
 </html>

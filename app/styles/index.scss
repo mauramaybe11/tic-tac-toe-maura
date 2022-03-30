@@ -7,8 +7,8 @@
 $font-family-part-two: 'Palette Mosaic', serif;
 $font-family: 'Playfair Display', serif;
 $body-bg-color: pink;
-$box-bg-color: blue;
-$box-border-color: orange;
+$box-bg-color: rgb(192, 150, 182);
+$box-border-color: rgb(4, 3, 61);
 $alt-bg-color: cyan;
 
 body {
@@ -41,11 +41,13 @@ h1 {
   font-family: 'Creepster', cursive;
   text-align: center;
   color: rgb(4, 3, 61);
+  font-size: 70px;
 }
 h2 {
   font-family: 'Creepster', cursive;
   text-align: center;
   color: rgb(4, 3, 61);
+  font-size: 50px;
 }
 p {
   color: rgb(4, 3, 61); 
@@ -53,8 +55,17 @@ p {
   font-family: 'Creepster', cursive;
   font-size: 30px;
 }
-.form {
+button {
+  color: rgb(4, 3, 61); 
   text-align:left;
+  font-family: 'Creepster', cursive;
+  font-size: 30px;
+}
+.form {
+  color: rgb(4, 3, 61); 
+  text-align:left;
+  font-family: 'Creepster', cursive;
+  font-size: 30px;
 }
 .alt-color {
   background-color: $alt-bg-color;
