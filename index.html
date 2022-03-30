@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slug Love</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <h1>Slug Love</h1>
+
+    <button id="how-to-play">How to Play!</button>
+    <button id="hide-how-to-play">Hide Me!</button>
+    
+    <div class="form" id="slug-sign-up-form">
+      <form id="sign-up">
+        <p>This is a fake game. Do not use your real email or passwords.</p>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input class="sign-up-button" type="submit" value="Sign up!">
+      </form>
+      <section id="slug-sign-up-success-display"></section>
+      <section id="slug-sign-up-error-display"></section>
+    </div>
+    
+    <button id="new-slug">New Slug Trying to find Love?</button>
+    <button id="hide-new-slug">Hide Me!</button>
+    
+    
+
+
+    <div class="form" id="slug-sign-in-form">
+      <p></p>
+      <form id="sign-in-form">
+        <input name="credentials[email]" type="email" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Enter password">
+        <button type="submit">Sign In</button>
+      </form>
+      <section id="slug-sign-in-success-display"></section>
+      <section id="slug-sign-in-error-display"></section>
+    </div>
+
+    <div id="slug-sign-out">
+      <p id="sign-out-text"></p>
+      <button id="sign-out-button">Sign Out</button>
+
+      <section id="slug-success-display"></section>
+      <section id="slug-error-display"></section>
+    </div>
+    <button id="new-game">New Game</button>
+    <h2 class="game-play" id="user-turn">Green Slug Goes First!</h2>
+    <h2 id="Winner"></h2>
+
+    <section id="tic-tac-toe-game">
+      <div class="container">
+        <div class="row">
+          <div  data-cell-index= 0 class="col-4 box">Click Me</div>
+          <div  data-cell-index= 1 class="col-4 box">Click Me</div>
+          <div  data-cell-index= 2 class="col-4  box">Click Me</div>
+          <div  data-cell-index= 3 class="col-4  box">Click Me</div>
+          <div  data-cell-index= 4 class="col-4 box">Click Me</div>
+          <div  data-cell-index= 5 class="col-4  box">Click Me</div>
+          <div  data-cell-index= 6 class="col-4 box">Click Me</div>
+          <div  data-cell-index= 7 class="col-4 box">Click Me</div>
+          <div  data-cell-index= 8 class="col-4 box">Click Me</div>
+        </div>
+      </div>
+      
+    </section>
+  </body>
+</html>

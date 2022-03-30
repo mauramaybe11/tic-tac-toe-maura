@@ -1,0 +1,86 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Palette+Mosaic&display=swap');
+
+
+$font-family-part-two: 'Palette Mosaic', serif;
+$font-family: 'Playfair Display', serif;
+$body-bg-color: pink;
+$box-bg-color: rgb(192, 150, 182);
+$box-border-color: rgb(4, 3, 61);
+$alt-bg-color: cyan;
+
+body {
+  background-color: $body-bg-color;
+  background-image: url(app/slug-images/slug-background.png);
+  height:0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:auto;
+}
+.game-title {
+color: blue;
+}
+.box {
+  align-items: center;
+  background-color: $box-bg-color;
+  border: 1px solid $box-border-color;
+  color: $box-border-color;
+  display: flex;
+  font-family: $font-family-part-two;
+  height: 80px;
+  overflow: hidden;
+  justify-content: center;
+}
+div.box > img.slug-daddy {
+  max-width: 100%;
+  max-height: 100%;
+}
+h1 {
+  font-family: 'Creepster', cursive;
+  text-align: center;
+  color: rgb(4, 3, 61);
+  font-size: 70px;
+}
+h2 {
+  font-family: 'Creepster', cursive;
+  text-align: center;
+  color: rgb(4, 3, 61);
+  font-size: 50px;
+}
+p {
+  color: rgb(4, 3, 61); 
+  text-align:left;
+  font-family: 'Creepster', cursive;
+  font-size: 30px;
+}
+button {
+  color: rgb(4, 3, 61); 
+  text-align:left;
+  font-family: 'Creepster', cursive;
+  font-size: 30px;
+  border-radius: 12px;
+  background-color:rgb(192, 150, 182)
+}
+.form {
+  color: rgb(4, 3, 61); 
+  text-align:left;
+  font-family: 'Creepster', cursive;
+  font-size: 30px;
+}
+.sign-up-button {
+  color: rgb(4, 3, 61); 
+  text-align:left;
+  font-family: 'Creepster', cursive;
+  font-size: 30px;
+  background-color:rgb(192, 150, 182);
+  border-radius: 12px;
+}
+.game-play{
+  text-align: center;
+  color: green;
+}
+.alt-color {
+  background-color: $alt-bg-color;
+}
