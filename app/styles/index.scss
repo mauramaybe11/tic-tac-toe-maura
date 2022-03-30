@@ -60,12 +60,20 @@ button {
   text-align:left;
   font-family: 'Creepster', cursive;
   font-size: 30px;
+  background-color:rgb(192, 150, 182)
 }
 .form {
   color: rgb(4, 3, 61); 
   text-align:left;
   font-family: 'Creepster', cursive;
   font-size: 30px;
+}
+.sign-up-button {
+  color: rgb(4, 3, 61); 
+  text-align:left;
+  font-family: 'Creepster', cursive;
+  font-size: 30px;
+  background-color:rgb(192, 150, 182)
 }
 .alt-color {
   background-color: $alt-bg-color;

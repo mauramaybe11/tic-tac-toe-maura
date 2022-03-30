@@ -82,41 +82,48 @@ const onBoxClick = function () {
     console.log(gameOver)
     console.log(store.game.cells)
     $('.box').off('click')
+    $('#user-turn').hide()
   }
   if (store.game.cells[3] === store.game.cells[4] && store.game.cells[4] === store.game.cells[5] && store.game.cells[4] !== '') {
     $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('#user-turn').hide()
   }
   if (store.game.cells[6] === store.game.cells[7] && store.game.cells[7] === store.game.cells[8] && store.game.cells[6] !== '') {
     $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('#user-turn').hide()
   }
   if (store.game.cells[6] === store.game.cells[7] && store.game.cells[7] === store.game.cells[8] && store.game.cells[6] !== '') {
     $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
+    $('#user-turn').hide()
   }
   if (store.game.cells[0] === store.game.cells[3] && store.game.cells[3] === store.game.cells[6] && store.game.cells[6] !== '') {
     $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('#user-turn').hide()
   }
   if (store.game.cells[1] === store.game.cells[4] && store.game.cells[4] === store.game.cells[7] && store.game.cells[1] !== '') {
     $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('#user-turn').hide()
   }
   if (store.game.cells[2] === store.game.cells[5] && store.game.cells[5] === store.game.cells[8] && store.game.cells[2] !== '') {
     $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('#user-turn').hide()
   }
   // diagonals
   if (store.game.cells[0] === store.game.cells[4] && store.game.cells[4] === store.game.cells[8] && store.game.cells[0] !== '') {
@@ -124,17 +131,20 @@ const onBoxClick = function () {
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('#user-turn').hide()
   }
   if (store.game.cells[2] === store.game.cells[4] && store.game.cells[4] === store.game.cells[6] && store.game.cells[6] !== '') {
     $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('#user-turn').hide()
   } else if (store.game.cells[0] !== '' && store.game.cells[1] !== '' && store.game.cells[2] !== '' && store.game.cells[3] !== '' && store.game.cells[4] !== '' && store.game.cells[5] !== '' & store.game.cells[6] !== '' && store.game.cells[7] !== '' && store.game.cells[8] !== '') {
     $('#Winner').text("It's a tie!")
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('#user-turn').hide()
   }
   console.log(cellIndex, store.game.cells[cellIndex], gameOver)
   slugApi.updateGame(cellIndex, store.game.cells[cellIndex], gameOver)
@@ -147,6 +157,7 @@ const onCreateNewGame = function () {
     .then((response) => slugUi.onStartGameSuccess(response))
   $('.box').on('click', onBoxClick)
   $('#user-turn').html('<p>Green Slug Goes First!</p>')
+  $('#user-turn').show()
 }
 // let game = {
 //     cell = {

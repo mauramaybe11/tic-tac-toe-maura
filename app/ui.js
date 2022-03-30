@@ -4,31 +4,36 @@ const onSignUpSuccess = function () {
   $('#slug-sign-up-success-display').html('<p>Your slug successfully signed up, its on the way to finding love</p>')
   $('form').trigger('reset')
   $('#slug-sign-up-error-display').hide()
+  $('#slug-sign-up-success-display').show()
 }
 
 const onSignUpFailure = function () {
   $('#slug-sign-up-error-display').html('<p>Your Slug can not find love because it did not successfully sign up</p>')
+  $('#slug-sign-up-error-display').show()
+  $('#slug-sign-up-success-display').hide()
 }
 
 const onSignInSuccess = function (response) {
   $('form').trigger('reset')
   $('#slug-sign-up-form, #slug-sign-in-form, #slug-error-display').hide()
   $('#slug-success-display').html('<p>Your Slug is a GO!</p>')
-  $('#new-game, #sign-out-button, #Winner, #user-turn, #slug-success-display, #slug-sign-up-success-display, #slug-sign-out').show()
+  $('#new-game, #sign-out-button, #Winner, #user-turn, #slug-sign-in-success-display, #slug-success-display, #slug-sign-up-success-display, #slug-sign-out').show()
   console.log(response)
   store.user = response.user
 }
 
 const onSignInFailure = function () {
-  $('#slug-error-display').html('<p>Error while signing in</p>')
+  $('#slug-sign-in-error-display').html('<p>Error while signing in</p>')
+  $('#slug-sign-in-error-display').show()
 }
 
 const onSignOutSuccess = function () {
   $('#slug-success-display').html('<p>Your Slug is OUT!</p>')
-
+  $('#Winner').html('<p>Who Will Win?</p>')
+  $('#user-turn').html('<p>Green Slug Goes First!</p>')
   $('form').trigger('reset')
-  $('#slug-sign-up-form, #slug-sign-in-form').show()
-  $('#new-game, #tic-tac-toe-game, #Winner, #sign-out-button, #sign-out-text, #user-turn, #slug-sign-up-error-display, #slug-sign-up-success-display').hide()
+  $('#slug-sign-up-form, #slug-sign-in-form, #slug-sign-up-error-display, #slug-sign-up-success-display').show()
+  $('#new-game, #tic-tac-toe-game, #Winner, #sign-out-button, #sign-out-text, #user-turn, #slug-sign-up-error-display, #slug-sign-up-success-display, #slug-sign-in-error-display').hide()
 }
 
 const onSignOutFailure = function () {
